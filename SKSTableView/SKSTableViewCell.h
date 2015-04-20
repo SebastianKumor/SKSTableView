@@ -23,7 +23,7 @@
 /**
  * The boolean value showing the receiver is expanded or not. The default value of this property is NO.
  */
-@property (nonatomic, assign, getter = isExpanded) BOOL expanded;
+@property (nonatomic, assign, getter = isExpanded ) BOOL expanded;
 
 /**
  * Adds an indicator view into the receiver when the relevant cell is expanded.
