@@ -281,7 +281,6 @@ CGFloat const kDefaultCellHeight = 44.0f;
         return;
     }
         
-        
     if ([cell respondsToSelector:@selector(isExpandable)])
     {
         if (cell.isExpandable)
