@@ -323,24 +323,22 @@ CGFloat const kDefaultCellHeight = 44.0f;
                 [cell accessoryViewAnimation];
             }
         
-        if ([_SKSTableViewDelegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)])
-        {
+        
             
-            if (correspondingIndexPath.subRow == 0)
-            {
-                [_SKSTableViewDelegate tableView:tableView didSelectRowAtIndexPath:correspondingIndexPath];
+            if (correspondingIndexPath.subRow == 0) {
+                if ([_SKSTableViewDelegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)]) {
+                    [_SKSTableViewDelegate tableView:tableView didSelectRowAtIndexPath:correspondingIndexPath];
+                }
             }
-            else
-            {
-                [_SKSTableViewDelegate tableView:self didSelectSubRowAtIndexPath:correspondingIndexPath];
+            else {
+                if ([_SKSTableViewDelegate respondsToSelector:@selector(tableView:didSelectSubRowAtIndexPath:)]) {
+                    [_SKSTableViewDelegate tableView:self didSelectSubRowAtIndexPath:correspondingIndexPath];
                 }
             }
         }
     }
-    else
-    {
-        if ([_SKSTableViewDelegate respondsToSelector:@selector(tableView:didSelectSubRowAtIndexPath:)])
-        {
+    else {
+        if ([_SKSTableViewDelegate respondsToSelector:@selector(tableView:didSelectSubRowAtIndexPath:)]) {
             NSIndexPath *correspondingIndexPath = [self correspondingIndexPathForRowAtIndexPath:indexPath];
             
             [_SKSTableViewDelegate tableView:self didSelectSubRowAtIndexPath:correspondingIndexPath];
