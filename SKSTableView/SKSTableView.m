@@ -273,13 +273,6 @@ CGFloat const kDefaultCellHeight = 44.0f;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     SKSTableViewCell *cell = (SKSTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
-
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        if ([_SKSTableViewDelegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)]) {
-            [_SKSTableViewDelegate tableView:tableView didSelectRowAtIndexPath:indexPath];
-        }
-        return;
-    }
         
     if ([cell respondsToSelector:@selector(isExpandable)])
     {
