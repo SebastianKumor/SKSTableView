@@ -485,15 +485,14 @@ CGFloat const kDefaultCellHeight = 44.0f;
 //    if ([_SKSTableViewDelegate respondsToSelector:@selector(tableView:didUnhighlightRowAtIndexPath:)])
 //        [_SKSTableViewDelegate tableView:tableView didUnhighlightRowAtIndexPath:indexPath];
 //}
-//
-//- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    if ([_SKSTableViewDelegate respondsToSelector:@selector(tableView:willSelectRowAtIndexPath:)])
-//        [_SKSTableViewDelegate tableView:tableView willSelectRowAtIndexPath:indexPath];
-//
-//    return nil;
-//}
-//
+
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([_SKSTableViewDelegate respondsToSelector:@selector(tableView:willSelectRowAtIndexPath:)])
+        [_SKSTableViewDelegate tableView:tableView willSelectRowAtIndexPath:indexPath];
+
+    return nil;
+}
+
 //- (NSIndexPath *)tableView:(UITableView *)tableView willDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 //{
 //    if ([_SKSTableViewDelegate respondsToSelector:@selector(tableView:willDeselectRowAtIndexPath:)])
